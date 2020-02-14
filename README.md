@@ -40,13 +40,24 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+ - One way Express extends the functionality of Node is by providing routing which is a way to select which request handler function is executed based on the URL and the HTTP method that was used.
+ - Another functionality Express provides is middleware which are functions that get the request and response and can perform different operations on them. Depending on the response, they can either move onto the next middleware or return a response to the client.
+
 - [ ] Describe Middleware?
+
+ -  Middleware are functions that get the request and response and can perform different operations on them. Depending on the response, they can either move onto the next middleware or return a response to the client.
 
 - [ ] Describe a Resource?
 
+ - In terms of a RESTful web API, everything is a resource. Each resource has a unique URL where it can be accessed. Resource management happens via HTTP methods/CRUD operations.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+ - An API can return a successful HTTP response: `Successful responses (200–299)`
+
 - [ ] How can we partition our application into sub-applications?
+
+ - Routing is a way to partition our application into sub-applications by mapping incoming requests to servers to their appropriate request handler function. That way resources that share the same base route are partitioned into their own file away from the other resources of the application.
 
 ## Minimum Viable Product
 
