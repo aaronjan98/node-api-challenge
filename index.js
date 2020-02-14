@@ -1,10 +1,5 @@
-const express = require('express');
+const server = require("./server.js");
 
-const server = express();
-
-server.get('/', (req, res) => {
-  res.send('Hello World');
+server.listen(5000, () => {
+  console.log("\n* Server Running on http://localhost:5000 *\n");
 });
-
-const port = 5000;
-server.listen(port, () => console.log(`API running on port ${port}`));
