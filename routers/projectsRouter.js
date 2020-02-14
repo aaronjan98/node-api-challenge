@@ -1,5 +1,6 @@
 const express = require('express');
 
+const Actions = require('../data/helpers/actionModel.js');
 const Projects = require('../data/helpers/projectModel.js');
 const router = express.Router();
 
@@ -35,6 +36,17 @@ router.get('/:id/actions', validateProjectId, (req, res) => {
       }).catch(err => {
         console.log(err);
         res.status(500).json({ error: 'Unable to retrieve the actions' });
+      });
+})
+
+router.post('/:id/actions', validateProjectId, (req, res) => {
+    Actions.insert(req.body)
+    .then(action => {
+        console.log(action);
+        res.status(201).json(action);
+      }).catch(err => {
+        console.log(err);
+        res.status(500).json({ error: 'Unable to retrieve the created action' });
       });
 })
 
