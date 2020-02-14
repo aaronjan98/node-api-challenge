@@ -5,9 +5,7 @@ const Projects = require('../data/helpers/projectModel.js');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    // req.body = [];
-    // console.log(req.body);
-    Projects.get(req.body).then(resources => {
+    Projects.get().then(resources => {
       console.log(resources);
       res.status(201).json(resources);
     }).catch(err => {
