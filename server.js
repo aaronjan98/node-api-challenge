@@ -10,8 +10,8 @@ server.use(cors());
 server.use(express.json());
 server.use(logger);
 
-// server.use('/actions', actionsRouter);
-// server.use('/projects', projectsRouter);
+server.use('/actions', actionsRouter);
+server.use('/projects', projectsRouter);
 
 server.get('/', (req, res) => {
   res.send(`<h2>Hello World!</h2>`);
